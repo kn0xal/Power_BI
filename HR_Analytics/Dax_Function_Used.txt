@@ -1,1 +1,17 @@
+Total Employees = COUNT('HR_Analytics_India'[EmployeeID])
+
+Active Employees = 
+CALCULATE(COUNT('HR_Analytics_India'[EmployeeID]), 'HR_Analytics_India'[Attrition] = "No")
+
+Attrited Employees = 
+CALCULATE(COUNT('HR_Analytics_India'[EmployeeID]), 'HR_Analytics_India'[Attrition] = "Yes")
+
+Attrition Rate = 
+DIVIDE([Attrited Employees], [Total Employees], 0)
+
+Average Tenure = 
+AVERAGE('HR_Analytics_India'[YearsAtCompany])
+
+Average Salary = 
+AVERAGE('HR_Analytics_India'[Salary])
 
